@@ -2,9 +2,9 @@ package org.pouncilt.plugins;
 
 import java.io.File;
 
-import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugin.testing.AbstractMojoTestCase;
+import org.pouncilt.plugins.saucelabs.StartGoal;
+import org.pouncilt.plugins.saucelabs.StopGoal;
 
 public class TestingSauce extends AbstractMojoTestCase {
 	//private DefaultSelenium selenium;
@@ -47,13 +47,13 @@ public class TestingSauce extends AbstractMojoTestCase {
 	}
 
     public void start(File pom) throws Exception {
-        Start sauceLabsStartMojo = (Start) lookupMojo( "start", pom );
+        StartGoal sauceLabsStartMojo = (StartGoal) lookupMojo( "start", pom );
         assertNotNull( sauceLabsStartMojo );
         sauceLabsStartMojo.execute();
 	}
 	
 	public void stop(File pom) throws Exception { 
-        Stop sauceLabsStopMojo = (Stop) lookupMojo( "stop", pom );
+        StopGoal sauceLabsStopMojo = (StopGoal) lookupMojo( "stop", pom );
         assertNotNull( sauceLabsStopMojo );
         sauceLabsStopMojo.execute();
     }
