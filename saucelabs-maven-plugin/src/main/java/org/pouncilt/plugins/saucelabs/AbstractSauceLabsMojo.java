@@ -1,4 +1,4 @@
-package org.pouncilt.plugins;
+package org.pouncilt.plugins.saucelabs;
 
 import java.net.URL;
 import java.util.ArrayList;

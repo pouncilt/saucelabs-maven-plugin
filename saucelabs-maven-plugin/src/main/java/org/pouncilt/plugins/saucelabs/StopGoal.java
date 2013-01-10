@@ -1,4 +1,4 @@
-package org.pouncilt.plugins;
+package org.pouncilt.plugins.saucelabs;
 
 import java.util.Map;
 
@@ -11,7 +11,7 @@ import org.pouncilt.saucelabs.SauceLabClient;
  * 
  * @goal stop
  */
-public class Stop extends AbstractSauceLabsMojo {
+public class StopGoal extends AbstractSauceLabsMojo {
 	@Override
 	public void doExecute() throws MojoExecutionException, MojoFailureException {
 		@SuppressWarnings("unchecked")

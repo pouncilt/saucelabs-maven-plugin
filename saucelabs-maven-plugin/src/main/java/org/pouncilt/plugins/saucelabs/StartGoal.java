@@ -1,4 +1,4 @@
-package org.pouncilt.plugins;
+package org.pouncilt.plugins.saucelabs;
 
 import java.util.Hashtable;
 import java.util.Map;
@@ -12,14 +12,14 @@ import org.pouncilt.saucelabs.SauceLabClient;
  * 
  * @goal start
  */
-public class Start extends AbstractSauceLabsMojo{
+public class StartGoal extends AbstractSauceLabsMojo{
 
 	@Override
 	protected void doExecute() throws MojoExecutionException, MojoFailureException {
 		SauceLabClient sauceLabClient = new SauceLabClient(desiredPlatforms, remoteUrl, wait);
 		sauceLabClient.start(targetUrl);
 		// TODO: Need to figure out how to save the SauceLabClient object in the plugin context.
-		//		 And then retrieve SauceLabClient Object from the Stop Mojo.
+		//		 And then retrieve SauceLabClient Object from the StopGoal Mojo.
 		@SuppressWarnings("unchecked")
 		Map<Object, Object> pluginContext = this.getPluginContext();
 		if(pluginContext == null){
